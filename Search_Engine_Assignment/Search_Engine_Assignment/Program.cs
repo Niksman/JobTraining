@@ -6,20 +6,49 @@ namespace Search_Engine_Assignment
     class Program
     {
         static void Main(string[] args) {
-			Console.WriteLine("Type in something to search for in item names:...");
-			DisplaySearchedContent();
+			Console.WriteLine("Type in something to search for in item names, or just hit enter to list all!");
+		//	DisplaySearchedContent();
+			DisplaySearchedContent_MyAlgorithm();
 
 			Console.ReadLine();
+		}
+
+		private static void DisplaySearchedContent_MyAlgorithm() {
+			string userInput = Console.ReadLine();
+			Service service = new Service();
+			List<MyBaseClass> sortedList = new List<MyBaseClass>();
+			var list = service.AllTitlesList;
+			foreach (var item in list) {
+				if (DoesStringContainsSubstring(item.Name, userInput)) {
+					sortedList.Add(item);
+				}
+			}
+			foreach (var item in sortedList) {
+				Console.WriteLine(item);
+			}
+		}
+
+		public static bool DoesStringContainsSubstring(string name, string input) {
+			bool result = true;
+
+			if (input == null) {
+				result = true;
+			} else if (name.ToLower().Contains(input.ToLower())) {
+				result = true;
+			} else {
+				result = false;
+			}
+			return result;
 		}
 
 		private static void DisplaySearchedContent() {
 			string userInput = Console.ReadLine();
 			
 			List<MyBaseClass> results = new Service().AllTitlesList.FindAll(x => x.Name.ToLower().Contains(userInput.ToLower()));
-
 			foreach (var item in results) {
 				Console.WriteLine(item);
 			}
 		}
+
 	}
 }
