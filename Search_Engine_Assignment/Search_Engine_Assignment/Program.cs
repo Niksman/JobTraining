@@ -1,22 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Search_Engine_Assignment
-{
-    class Program
-    {
-        static void Main(string[] args) {
+namespace Search_Engine_Assignment {
+	class Program {
+		static void Main(string[] args) {
 			Console.WriteLine("Type in something to search for in item names, or just hit enter to list all!");
-		//	DisplaySearchedContent();
+			//	DisplaySearchedContent();
 			DisplaySearchedContent_MyAlgorithm();
 
 			Console.ReadLine();
 		}
 
 		private static void DisplaySearchedContent_MyAlgorithm() {
-			string userInput = Console.ReadLine();
-			Service service = new Service();
-			List<MyBaseClass> sortedList = new List<MyBaseClass>();
+			var userInput = Console.ReadLine();
+			var service = new Service();
+			var sortedList = new List<MyBaseClass>();
 			var list = service.AllTitlesList;
 			foreach (var item in list) {
 				if (DoesStringContainsSubstring(item.Name, userInput)) {
@@ -31,11 +29,9 @@ namespace Search_Engine_Assignment
 		public static bool DoesStringContainsSubstring(string name, string input) {
 			bool result = true;
 
-			if (input == null) {
+			if (input == null || name.ToLower().Contains(input.ToLower())) {
 				result = true;
-			} else if (name.ToLower().Contains(input.ToLower())) {
-				result = true;
-			} else {
+			}  else {
 				result = false;
 			}
 			return result;
@@ -43,8 +39,8 @@ namespace Search_Engine_Assignment
 
 		private static void DisplaySearchedContent() {
 			string userInput = Console.ReadLine();
-			
-			List<MyBaseClass> results = new Service().AllTitlesList.FindAll(x => x.Name.ToLower().Contains(userInput.ToLower()));
+
+			var results = new Service().AllTitlesList.FindAll(x => x.Name.ToLower().Contains(userInput.ToLower()));
 			foreach (var item in results) {
 				Console.WriteLine(item);
 			}

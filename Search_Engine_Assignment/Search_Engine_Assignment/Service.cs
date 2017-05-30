@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Search_Engine_Assignment
-{
-    public class Service
-    {
+namespace Search_Engine_Assignment {
+	public class Service {
 
 		public List<Movie> movieList = new List<Movie>() {
 			new Movie("Matrix", "American fiction movie where Keanu Reevs kicks some badasses", 10),
@@ -38,7 +36,7 @@ namespace Search_Engine_Assignment
 			new Book("Z as zombie", "There isnt any Z letter in other names, so it should be easy to find in search engine", 17)
 		};
 
-		
+
 
 
 		public void ShowBooksList() {
@@ -59,6 +57,6 @@ namespace Search_Engine_Assignment
 			}
 		}
 
-		
+
 	}
 }
