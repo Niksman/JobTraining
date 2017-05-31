@@ -2,32 +2,31 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Search_Engine_Assignment
-{
-	public abstract class MyBaseClass {
+namespace Search_Engine_Assignment {
+	public abstract class MyBaseItemClass {
 		public string Name { get; set; }
 		public string Description { get; set; }
 		public int Price { get; set; }
 		public abstract ChooseType Type { get; }
 
-		public MyBaseClass(string name, string description, int price) {
+		public MyBaseItemClass(string name, string description, int price) {
 			Name = name;
 			Description = description;
 			Price = price;
 		}
-	
+
 	}
 
 	// Zasto sam trebao da pravim ovo?
 	public enum ChooseType {
-			Unknown,
-			Movie,
-			Song,
-			Book
+		Unknown,
+		Movie,
+		Song,
+		Book
 	}
 
-	public class Movie : MyBaseClass {
-		
+	public class Movie : MyBaseItemClass {
+
 		public override ChooseType Type => ChooseType.Movie;
 
 		public Movie(string name, string description, int price) : base(name, description, price) {
@@ -41,7 +40,7 @@ namespace Search_Engine_Assignment
 		}
 	}
 
-	public class Song : MyBaseClass {
+	public class Song : MyBaseItemClass {
 
 		public override ChooseType Type => ChooseType.Song;
 
@@ -56,7 +55,7 @@ namespace Search_Engine_Assignment
 		}
 	}
 
-	public class Book : MyBaseClass {
+	public class Book : MyBaseItemClass {
 
 		public override ChooseType Type => ChooseType.Book;
 
