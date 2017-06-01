@@ -131,16 +131,69 @@ namespace Search_Engine_Assignment {
 			Console.WriteLine("\nSorted list contains {0} items.", searchedList.Count);
 		}
 
-		public static bool DoesStringContainsSubstring(string name, string input) {
-			bool result = true;
-
-			if (input == null || name.ToLower().Contains(input.ToLower())) {
-				result = true;      // returns all items if input is empty
-			} else {
-				result = false;
+		private static void SortAllPricesAndSum() {
+			Console.WriteLine("\nSorted items by price ascending:\n");
+			var results = SearchedList.OrderBy(x => x.Price).ToList();
+			foreach (var item in results) {
+				Console.WriteLine(item);
 			}
-			return result;
+			ShowDetailsDialog();
+			OrderSearchedListChooser();
 		}
+
+		private static void OrderItemsByName() {
+			Console.WriteLine("\nSorted items by name ascending:\n");
+			var results = SearchedList.OrderBy(x => x.Name).ToList();
+			foreach (var item in results) {
+				Console.WriteLine(item);
+			}
+			ShowDetailsDialog();
+			OrderSearchedListChooser();
+		}
+
+		private static List<MyBaseItemClass> DisplaySearchedContent_Linq() {
+			var userInput = Console.ReadLine();
+			var newList = new List<MyBaseItemClass>();
+			var results = new Service().GetAllItemsList().Where(x => x.Name.ToLower().Contains(userInput.ToLower()));
+			foreach (var item in results) {
+				Console.WriteLine(item);
+				newList.Add(item);
+			}
+			Console.WriteLine("\nSorted list contains {0} items.", results.Count());
+
+			return newList;
+		}
+
+		//Methods used for assignment 1
+		//private static void DisplaySearchedContent_MyAlgorithm() {
+		//	var userInput = Console.ReadLine();
+		//	var service = new Service();
+		//	var searchedList = new List<MyBaseItemClass>();
+		//	var list = service.GetAllItemsList();
+
+		//	foreach (var item in list) {
+		//		if (DoesStringContainsSubstring(item.Name, userInput)) {
+		//			searchedList.Add(item);
+		//		}
+
+		//	}
+		//	foreach (var item in searchedList) {
+		//		Console.WriteLine(item);
+		//	}
+
+		//	Console.WriteLine("\nSorted list contains {0} items.", searchedList.Count);
+		//}
+
+		//public static bool DoesStringContainsSubstring(string name, string input) {
+		//	bool result = true;
+
+		//	if (input == null || name.ToLower().Contains(input.ToLower())) {
+		//		result = true;      // returns all items if input is empty
+		//	} else {
+		//		result = false;
+		//	}
+		//	return result;
+		//}
 
 
 	}
