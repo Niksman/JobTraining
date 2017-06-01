@@ -8,14 +8,65 @@ namespace Search_Engine_Assignment {
 		public static List<MyBaseItemClass> SearchedList;
 
 		static void Main(string[] args) {
-			Console.WriteLine("Type in something to search for in item names, or just hit enter to list all!");
+			//Console.WriteLine("Type in something to search for in item names, or just hit enter to list all!");
 
+			Assignment_2();
+
+			// ASSIGNMENT 3
+			// Assignment_3();
+
+			// ASSIGNMENT 1
+			// DisplaySearchedContent_MyAlgorithm();
+
+			Console.ReadLine();
+		}
+
+		private static void Assignment_2() {
+			DisplayContentAssignment_2();
+
+			ShowMovieList();
+
+			ShowSongList();
+
+			ShowBookList();
+		}
+
+		private static void Assignment_3() {
 			SearchedList = DisplaySearchedContent_Linq();
 			ShowDetailsDialog();
 			OrderSearchedListChooser();
-			//DisplaySearchedContent_MyAlgorithm();
+		}
 
-			Console.ReadLine();
+		private static void ShowBookList() {
+			Console.WriteLine("\n\tBooks:\n");
+			var bList = new BookService().GetList();
+			foreach (var item in bList) {
+				Console.WriteLine(item);
+			}
+		}
+
+		private static void ShowSongList() {
+			Console.WriteLine("\n\tSongs:\n");
+			var sList = new SongService().GetList();
+			foreach (var item in sList) {
+				Console.WriteLine(item);
+			}
+		}
+
+		private static void ShowMovieList() {
+			Console.WriteLine("\n\tMovies:\n");
+			var mList = new MovieService().GetList();
+			foreach (var item in mList) {
+				Console.WriteLine(item);
+			}
+		}
+
+		private static void DisplayContentAssignment_2() {
+			Console.WriteLine("\tAll titles:\n");
+			var allLists = new Service().GetAllTitlesList();
+			foreach (var item in allLists) {
+				Console.WriteLine(item);
+			}
 		}
 
 		private static void ShowDetailsDialog() {
@@ -154,7 +205,7 @@ namespace Search_Engine_Assignment {
 		private static List<MyBaseItemClass> DisplaySearchedContent_Linq() {
 			var userInput = Console.ReadLine();
 			var newList = new List<MyBaseItemClass>();
-			var results = new Service().GetAllItemsList().Where(x => x.Name.ToLower().Contains(userInput.ToLower()));
+			var results = new Service().GetAllTitlesList().Where(x => x.Name.ToLower().Contains(userInput.ToLower()));
 			foreach (var item in results) {
 				Console.WriteLine(item);
 				newList.Add(item);
@@ -169,7 +220,7 @@ namespace Search_Engine_Assignment {
 		//	var userInput = Console.ReadLine();
 		//	var service = new Service();
 		//	var searchedList = new List<MyBaseItemClass>();
-		//	var list = service.GetAllItemsList();
+		//	var list = service.GetAllTitlesList();
 
 		//	foreach (var item in list) {
 		//		if (DoesStringContainsSubstring(item.Name, userInput)) {
