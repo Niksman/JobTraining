@@ -10,7 +10,12 @@ namespace Search_Engine_Assignment {
 		static void Main(string[] args) {
 			//Console.WriteLine("Type in something to search for in item names, or just hit enter to list all!");
 
-			Assignment_2();
+			//Assignment_2();
+
+			ReadDataService rds = new ReadDataService();
+			rds.ReadMoviesFromFile(rds.Movies_Path);
+			rds.ReadMoviesFromFile(rds.Songs_Path);
+			rds.ReadMoviesFromFile(rds.Books_Path);
 
 			// ASSIGNMENT 3
 			// Assignment_3();
@@ -23,11 +28,8 @@ namespace Search_Engine_Assignment {
 
 		private static void Assignment_2() {
 			DisplayContentAssignment_2();
-
 			ShowMovieList();
-
 			ShowSongList();
-
 			ShowBookList();
 		}
 
