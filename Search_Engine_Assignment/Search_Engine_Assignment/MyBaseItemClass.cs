@@ -7,7 +7,6 @@ namespace Search_Engine_Assignment {
 		public string Name { get; set; }
 		public string Description { get; set; }
 		public int Price { get; set; }
-		public abstract ChooseType Type { get; }
 
 		public MyBaseItemClass(string name, string description, int price) {
 			Name = name;
@@ -17,17 +16,7 @@ namespace Search_Engine_Assignment {
 
 	}
 
-	// Zasto sam trebao da pravim ovo?
-	public enum ChooseType {
-		Unknown,
-		Movie,
-		Song,
-		Book
-	}
-
 	public class Movie : MyBaseItemClass {
-
-		public override ChooseType Type => ChooseType.Movie;
 
 		public Movie(string name, string description, int price) : base(name, description, price) {
 			Name = name;
@@ -42,8 +31,6 @@ namespace Search_Engine_Assignment {
 
 	public class Song : MyBaseItemClass {
 
-		public override ChooseType Type => ChooseType.Song;
-
 		public Song(string name, string description, int price) : base(name, description, price) {
 			Name = name;
 			Description = description;
@@ -56,8 +43,6 @@ namespace Search_Engine_Assignment {
 	}
 
 	public class Book : MyBaseItemClass {
-
-		public override ChooseType Type => ChooseType.Book;
 
 		public Book(string name, string description, int price) : base(name, description, price) {
 			Name = name;
