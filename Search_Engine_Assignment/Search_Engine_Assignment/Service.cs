@@ -21,7 +21,24 @@ namespace Search_Engine_Assignment {
 			foreach (var item in bList) {
 				AllTitlesList.Add(new Book(item.Name, item.Description, item.Price));
 			}
+			var pList = new PictureService().GetList();
+			foreach (var item in pList) {
+				AllTitlesList.Add(new Picture(item.Name, item.Description, item.Price));
+			}
 			return AllTitlesList;
+		}
+	}
+
+	public class PictureService : IReadableList<Picture> {
+
+		List<Picture> pictureList = new ReadDataService().pictureList;
+
+		public List<Picture> GetList() {
+			var pList = new List<Picture>();
+			foreach (var item in pictureList) {
+				pList.Add(item);
+			}
+			return pList;
 		}
 	}
 

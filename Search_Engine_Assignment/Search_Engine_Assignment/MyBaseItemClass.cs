@@ -16,6 +16,19 @@ namespace Search_Engine_Assignment {
 
 	}
 
+	public class Picture : MyBaseItemClass {
+
+		public Picture(string name, string description, int price) : base(name, description, price) {
+			Name = name;
+			Description = description;
+			Price = price;
+		}
+
+		public override string ToString() {
+			return string.Format("Name of the picture is \"{0}\", description is \"{1}\". Buy it on Amazon for price \"${2}\".", Name, Description, Price);
+		}
+	}
+
 	public class Movie : MyBaseItemClass {
 
 		public Movie(string name, string description, int price) : base(name, description, price) {

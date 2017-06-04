@@ -10,10 +10,34 @@ namespace Search_Engine_Assignment
 		public static string Movies_Path = @"C:\Users\nikolas\Documents\learning.nikolas\Search_Engine_Assignment\movies_csv.txt";
 		public static string Songs_Path = @"C:\Users\nikolas\Documents\learning.nikolas\Search_Engine_Assignment\songs_csv.txt";
 		public static string Books_Path = @"C:\Users\nikolas\Documents\learning.nikolas\Search_Engine_Assignment\books_csv.txt";
+		public static string Pictures_Path = @"C:\Users\nikolas\Documents\learning.nikolas\Search_Engine_Assignment\pictures_csv.txt";
 
 		public List<Movie> movieList = new MovieMapperService().ConvertToList(Movies_Path);
 		public List<Song> songList = new SongMapperService().ConvertToList(Songs_Path);
 		public List<Book> bookList = new BookMapperService().ConvertToList(Books_Path);
+		public List<Picture> pictureList = new PictureMapperService().ConvertToList(Pictures_Path);
+	}
+
+	public class PictureMapperService : IMapper<string, Picture> {
+
+		public List<Picture> ConvertToList(string filePath) {
+			string[] input = File.ReadAllLines(filePath);
+
+			var query = from line in input
+						let data = line.Split(',')
+						select new {
+							Name = data[0],
+							Description = data[1],
+							Price = data[2]
+						};
+
+			var readListFromFile = new List<Picture>();
+
+			foreach (var item in query) {
+				readListFromFile.Add(new Picture(item.Name, item.Description, Convert.ToInt32(item.Price)));
+			}
+			return readListFromFile;
+		}
 	}
 
 	public class MovieMapperService : IMapper<string, Movie> {
