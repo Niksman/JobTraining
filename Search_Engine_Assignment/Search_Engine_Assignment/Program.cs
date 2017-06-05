@@ -147,25 +147,6 @@ namespace Search_Engine_Assignment {
 			OrderSearchedListChooser();
 		}
 
-		private static void DisplaySearchedContent_MyAlgorithm() {
-			var userInput = Console.ReadLine();
-			var service = new Service();
-			var searchedList = new List<MyBaseItemClass>();
-			var list = service.GetAllTitlesList();
-
-			foreach (var item in list) {
-				if (DoesStringContainsSubstring(item.Name, userInput)) {
-					searchedList.Add(item);
-				}
-
-			}
-			foreach (var item in searchedList) {
-				Console.WriteLine(item);
-			}
-
-			Console.WriteLine("\nSorted list contains {0} items.", searchedList.Count);
-		}
-
 		private static List<MyBaseItemClass> DisplaySearchedContent_Linq() {
 			var userInput = Console.ReadLine();
 			var newList = new List<MyBaseItemClass>();
@@ -200,16 +181,16 @@ namespace Search_Engine_Assignment {
 		//	Console.WriteLine("\nSorted list contains {0} items.", searchedList.Count);
 		//}
 
-		public static bool DoesStringContainsSubstring(string name, string input) {
-			bool result = true;
+		//public static bool DoesStringContainsSubstring(string name, string input) {
+		//	bool result = true;
 
-			if (input == null || name.ToLower().Contains(input.ToLower())) {
-				result = true;      // returns all items if input is empty
-			} else {
-				result = false;
-			}
-			return result;
-		}
+		//	if (input == null || name.ToLower().Contains(input.ToLower())) {
+		//		result = true;      // returns all items if input is empty
+		//	} else {
+		//		result = false;
+		//	}
+		//	return result;
+		//}
 
 
 	}
