@@ -12,12 +12,10 @@ namespace Search_Engine_Assignment {
 			Console.WriteLine("Type in something to search for in item names, or just hit enter to list all!");
 
 			// Assignment_2();
-			
+
 			// ASSIGNMENT 3
 			 Assignment_3();
-
 			
-
 			// ASSIGNMENT 1
 			// DisplaySearchedContent_MyAlgorithm();
 

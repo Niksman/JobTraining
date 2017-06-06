@@ -11,20 +11,9 @@ namespace Search_Engine_Assignment.Services {
 
 			var query = from line in input
 						let data = line.Split(',')
-						select new {
-							Name = data[0],
-							Description = data[1],
-							Price = data[2],
-							TimeAndDate = data[3],
-							DifferentField = data[4]
-						};
+						select new Picture(data[0], data[1], Convert.ToInt32(data[2]), Convert.ToDateTime(data[3]), data[4]);
 
-			var readListFromFile = new List<Picture>();
-
-			foreach (var item in query) {
-				readListFromFile.Add(new Picture(item.Name, item.Description, Convert.ToInt32(item.Price), Convert.ToDateTime(item.TimeAndDate), item.DifferentField));
-			}
-			return readListFromFile;
+			return query.ToList();
 		}
 	}
 }
