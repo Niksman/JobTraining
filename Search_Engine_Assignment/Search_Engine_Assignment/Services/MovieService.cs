@@ -1,0 +1,14 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using Search_Engine_Assignment.Base;
+
+namespace Search_Engine_Assignment.Services {
+	public class MovieService : IReadableList<Movie> {
+
+		public List<Movie> GetList() {
+			List<Movie> movieList = new ReadDataService().movieList;
+			return movieList;
+		}
+	}
+}

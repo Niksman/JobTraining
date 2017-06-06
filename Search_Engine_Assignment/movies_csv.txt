@@ -1,4 +1,4 @@
-Matrix, American fiction movie where Keanu Reevs kicks some badasses, 10
-Titanic, American heart braking story of Leonadro DiCaprio and Kate Winslet, 8
-Lepa sela lepo gore, Serbian movie about war in near history which I haven't watched, 12
-Godzilla, Gentle monster that doesn't exist killed by human, 14
+Matrix,American fiction movie where Keanu Reevs kicks some badasses,10,04/04/2004,Watchable
+Titanic,American heart braking story of Leonadro DiCaprio and Kate Winslet,8,04/04/2004,Watchable
+Lepa sela lepo gore,Serbian movie about war in near history which I haven't watched,2,04/04/2004,Watchable
+Godzilla,Gentle monster that doesn't exist killed by human,14,04/04/2004,Good

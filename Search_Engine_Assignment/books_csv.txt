@@ -1,4 +1,4 @@
-Knife, Serbian polititian actually wrote a book, 15
-War, Pretty sure that some book with this name does exist, 16
-Hacker, Some guy hacked something important. Cool, 18
-Z as zombie, There isnt any Z letter in other names so it should be easy to find in search engine, 17
+Knife,Serbian polititian actually wrote a book,15,03/03/2003,Novel
+War,Pretty sure that some book with this name does exist,16,03/03/2003,Novel
+Hacker,Some guy hacked something important. Cool,18,03/03/2003,Novel
+Z as zombie,There isnt any Z letter in other names so it should be easy to find in search engine,17,03/03/2003,Novel
