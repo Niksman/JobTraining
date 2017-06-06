@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using Search_Engine_Assignment.Base;
 
 namespace Search_Engine_Assignment.Services {

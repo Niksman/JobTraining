@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Search_Engine_Assignment.Base {
 	public class Movie : MyBaseItemClass {

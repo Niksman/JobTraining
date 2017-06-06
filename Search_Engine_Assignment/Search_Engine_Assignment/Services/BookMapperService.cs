@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Linq;
 using Search_Engine_Assignment.Base;
 
@@ -19,6 +18,7 @@ namespace Search_Engine_Assignment.Services {
 							TimeAndDate = data[3],
 							Genre = data[4]
 						};
+
 
 			var readListFromFile = new List<Book>();
 

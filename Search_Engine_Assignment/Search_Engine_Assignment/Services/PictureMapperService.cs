@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Search_Engine_Assignment.Base;
 
 namespace Search_Engine_Assignment.Services {
