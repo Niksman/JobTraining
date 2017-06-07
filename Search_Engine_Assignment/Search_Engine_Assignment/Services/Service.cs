@@ -11,23 +11,17 @@ namespace Search_Engine_Assignment.Services {
 	public class Service {
 
 		public List<MyBaseItemClass> GetAllTitlesList() {
+
 			var AllTitlesList = new List<MyBaseItemClass>();
 			var mList = new MovieService().GetList();
-			foreach (var item in mList) {
-				AllTitlesList.Add(new Movie(item.Name, item.Description, item.Price, item.TimeAndDate, item.MyReview));
-			}
 			var sList = new SongService().GetList();
-			foreach (var item in sList) {
-				AllTitlesList.Add(new Song(item.Name, item.Description, item.Price, item.TimeAndDate, item.Language));
-			}
 			var bList = new BookService().GetList();
-			foreach (var item in bList) {
-				AllTitlesList.Add(new Book(item.Name, item.Description, item.Price, item.TimeAndDate, item.Genre));
-			}
 			var pList = new PictureService().GetList();
-			foreach (var item in pList) {
-				AllTitlesList.Add(new Picture(item.Name, item.Description, item.Price, item.TimeAndDate, item.Owner));
-			}
+			AllTitlesList.AddRange(mList);
+			AllTitlesList.AddRange(sList);
+			AllTitlesList.AddRange(bList);
+			AllTitlesList.AddRange(pList);
+			
 			return AllTitlesList;
 		}
 
@@ -40,6 +34,11 @@ namespace Search_Engine_Assignment.Services {
 		public static string[] PicturesFileToStringArray { get => File.ReadAllLines(Pictures_Path); }
 		public static string[] SongsFileToStringArray { get => File.ReadAllLines(Songs_Path); }
 		public static string[] BooksFileToStringArray { get => File.ReadAllLines(Books_Path); }
+
+		public string[] GetToStringArray() {
+			string[] input = File.ReadAllLines(Movies_Path);
+			return input;
+		}
 
 		public List<Movie> movieList = new MovieMapperService().ConvertToList(MoviesFileToStringArray);
 		public List<Song> songList = new SongMapperService().ConvertToList(SongsFileToStringArray);
