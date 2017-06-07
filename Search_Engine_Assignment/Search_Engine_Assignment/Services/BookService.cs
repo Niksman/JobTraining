@@ -5,7 +5,7 @@ namespace Search_Engine_Assignment.Services {
 	public class BookService : IReadableList<Book> {
 
 		public List<Book> GetList() {
-			List<Book> bookList = new ReadDataService().bookList;
+			List<Book> bookList = new Service().bookList;
 			return bookList;
 		}
 	}

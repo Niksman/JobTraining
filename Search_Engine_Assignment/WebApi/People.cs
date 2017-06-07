@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebApi
-{
-    public class People
-    {
+namespace WebApi {
+	public class People {
 		public string Name { get; set; }
 		public string Surname { get; set; }
 

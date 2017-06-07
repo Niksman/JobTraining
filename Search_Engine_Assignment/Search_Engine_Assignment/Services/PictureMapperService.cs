@@ -7,7 +7,7 @@ namespace Search_Engine_Assignment.Services {
 	public class PictureMapperService : IMapper<string[], Picture> {
 
 		public List<Picture> ConvertToList(string[] input) {
-			input = ReadDataService.PicturesFileToStringArray;
+			input = Service.PicturesFileToStringArray;
 
 			var query = from line in input
 						let data = line.Split(',')

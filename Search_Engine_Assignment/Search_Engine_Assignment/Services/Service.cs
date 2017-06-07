@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using Search_Engine_Assignment;
@@ -29,37 +30,20 @@ namespace Search_Engine_Assignment.Services {
 			}
 			return AllTitlesList;
 		}
+
+		public static string Movies_Path = @"C:\Users\nikolas\Documents\learning.nikolas\Search_Engine_Assignment\movies_csv.txt";
+		public static string Songs_Path = @"C:\Users\nikolas\Documents\learning.nikolas\Search_Engine_Assignment\songs_csv.txt";
+		public static string Books_Path = @"C:\Users\nikolas\Documents\learning.nikolas\Search_Engine_Assignment\books_csv.txt";
+		public static string Pictures_Path = @"C:\Users\nikolas\Documents\learning.nikolas\Search_Engine_Assignment\pictures_csv.txt";
+
+		public static string[] MoviesFileToStringArray { get => File.ReadAllLines(Movies_Path); }
+		public static string[] PicturesFileToStringArray { get => File.ReadAllLines(Pictures_Path); }
+		public static string[] SongsFileToStringArray { get => File.ReadAllLines(Songs_Path); }
+		public static string[] BooksFileToStringArray { get => File.ReadAllLines(Books_Path); }
+
+		public List<Movie> movieList = new MovieMapperService().ConvertToList(MoviesFileToStringArray);
+		public List<Song> songList = new SongMapperService().ConvertToList(SongsFileToStringArray);
+		public List<Book> bookList = new BookMapperService().ConvertToList(BooksFileToStringArray);
+		public List<Picture> pictureList = new PictureMapperService().ConvertToList(PicturesFileToStringArray);
 	}
-
-	//public class PictureService : IReadableList<Picture> {
-
-	//	public List<Picture> GetList() {
-	//		List<Picture> pictureList = new ReadDataService().pictureList;
-	//		return pictureList;
-	//	}
-	//}
-
-	//public class MovieService : IReadableList<Movie> {
-		
-	//	public List<Movie> GetList() {
-	//	List<Movie> movieList = new ReadDataService().movieList;
-	//		return movieList;
-	//	}
-	//}
-
-	//public class SongService : IReadableList<Song> {
-
-	//	public List<Song> GetList() {
-	//	List<Song> songList = new ReadDataService().songList;
-	//		return songList;
-	//	}
-	//}
-
-	//public class BookService : IReadableList<Book> {
-
-	//	public List<Book> GetList() {
-	//	List<Book> bookList = new ReadDataService().bookList;
-	//		return bookList;
-	//	}
-	//}
 }

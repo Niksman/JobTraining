@@ -5,7 +5,7 @@ namespace Search_Engine_Assignment.Services {
 	public class SongService : IReadableList<Song> {
 
 		public List<Song> GetList() {
-			List<Song> songList = new ReadDataService().songList;
+			List<Song> songList = new Service().songList;
 			return songList;
 		}
 	}

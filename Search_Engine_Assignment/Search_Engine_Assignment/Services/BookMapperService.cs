@@ -7,7 +7,7 @@ namespace Search_Engine_Assignment.Services {
 	public class BookMapperService : IMapper<string[], Book> {
 
 		public List<Book> ConvertToList(string[] input) {
-			input = ReadDataService.BooksFileToStringArray;
+			input = Service.BooksFileToStringArray;
 
 			var query = from line in input
 						let data = line.Split(',')
