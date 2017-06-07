@@ -6,10 +6,6 @@ namespace Search_Engine_Assignment.Base {
 		public string MyReview { get; set; }
 
 		public Movie(string name, string description, int price, DateTime timeAndDate, string myReview) : base(name, description, price, timeAndDate) {
-			Name = name;
-			Description = description;
-			Price = price;
-			TimeAndDate = timeAndDate;
 			MyReview = myReview;
 		}
 

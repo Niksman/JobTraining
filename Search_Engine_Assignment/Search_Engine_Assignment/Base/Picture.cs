@@ -6,10 +6,6 @@ namespace Search_Engine_Assignment.Base {
 		public string Owner { get; set; }
 
 		public Picture(string name, string description, int price, DateTime timeAndDate, string owner) : base(name, description, price, timeAndDate) {
-			Name = name;
-			Description = description;
-			Price = price;
-			TimeAndDate = timeAndDate;
 			Owner = owner;
 		}
 

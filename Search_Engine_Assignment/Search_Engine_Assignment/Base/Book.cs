@@ -6,10 +6,6 @@ namespace Search_Engine_Assignment.Base {
 		public string Genre { get; set; }
 
 		public Book(string name, string description, int price, DateTime timeAndDate, string genre) : base(name, description, price, timeAndDate) {
-			Name = name;
-			Description = description;
-			Price = price;
-			TimeAndDate = timeAndDate;
 			Genre = genre;
 		}
 

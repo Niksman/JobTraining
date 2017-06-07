@@ -13,15 +13,12 @@ namespace Search_Engine_Assignment.Services {
 		public List<MyBaseItemClass> GetAllTitlesList() {
 
 			var AllTitlesList = new List<MyBaseItemClass>();
-			var mList = new MovieService().GetList();
-			var sList = new SongService().GetList();
-			var bList = new BookService().GetList();
-			var pList = new PictureService().GetList();
-			AllTitlesList.AddRange(mList);
-			AllTitlesList.AddRange(sList);
-			AllTitlesList.AddRange(bList);
-			AllTitlesList.AddRange(pList);
-			
+
+			AllTitlesList.AddRange(new MovieService().GetList());
+			AllTitlesList.AddRange(new SongService().GetList());
+			AllTitlesList.AddRange(new BookService().GetList());
+			AllTitlesList.AddRange(new PictureService().GetList());
+
 			return AllTitlesList;
 		}
 

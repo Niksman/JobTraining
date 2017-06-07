@@ -6,10 +6,6 @@ namespace Search_Engine_Assignment.Base {
 		public string Language { get; set; }
 
 		public Song(string name, string description, int price, DateTime timeAndDate, string language) : base(name, description, price, timeAndDate) {
-			Name = name;
-			Description = description;
-			Price = price;
-			TimeAndDate = timeAndDate;
 			Language = language;
 		}
 
