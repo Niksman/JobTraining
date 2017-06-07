@@ -7,7 +7,6 @@ namespace Search_Engine_Assignment.Services {
 	public class SongMapperService : IMapper<string[], Song> {
 
 		public List<Song> ConvertToList(string[] input) {
-			input = Service.SongsFileToStringArray;
 
 			var query = from line in input
 						let data = line.Split(',')

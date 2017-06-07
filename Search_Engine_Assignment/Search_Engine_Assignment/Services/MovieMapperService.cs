@@ -7,7 +7,6 @@ namespace Search_Engine_Assignment.Services {
 	public class MovieMapperService : IMapper<string[], Movie> {
 
 		public List<Movie> ConvertToList(string[] input) {
-			input = Service.MoviesFileToStringArray;
 
 			var query = from line in input
 						let data = line.Split(',')
