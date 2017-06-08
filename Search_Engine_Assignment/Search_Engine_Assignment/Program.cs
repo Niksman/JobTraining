@@ -22,17 +22,34 @@ namespace Search_Engine_Assignment {
 			Console.ReadLine();
 		}
 
+		#region Assignment 3 Methods
+		private static void Assignment_3() {
+			SearchedList = DisplaySearchedContent_Linq();
+			ShowDetailsDialog();
+			OrderSearchedListChooser();
+		}
+
+		private static List<MyBaseItemClass> DisplaySearchedContent_Linq() {
+			var userInput = Console.ReadLine();
+			var newList = new List<MyBaseItemClass>();
+			var results = new Service().GetAllTitlesList().Where(x => x.Name.ToLower().Contains(userInput.ToLower()));
+
+			foreach (var item in results) {
+				Console.WriteLine(item);
+				newList.Add(item);
+			}
+			Console.WriteLine("\nSorted list contains {0} items.", results.Count());
+
+			return newList;
+		}
+#endregion
+
+		#region Assignment 2 Methods
 		private static void Assignment_2() {
 			DisplayContentAssignment_2();
 			ShowMovieList();
 			ShowSongList();
 			ShowBookList();
-		}
-
-		private static void Assignment_3() {
-			SearchedList = DisplaySearchedContent_Linq();
-			ShowDetailsDialog();
-			OrderSearchedListChooser();
 		}
 
 		private static void ShowBookList() {
@@ -66,7 +83,9 @@ namespace Search_Engine_Assignment {
 				Console.WriteLine(item);
 			}
 		}
+#endregion
 
+		#region Sorting List Methods
 		private static void ShowDetailsDialog() {
 			Console.WriteLine("------------------------------------------------------------------------------");
 			Console.WriteLine("\n\tSelect 1 to order all items by name ascending, \n\tSelect 2 to sort all prices ascending, \n\tSelect 3 to order all items by description length, \n\tSelect 4 to see all items price details, \n\tSelect 5 to quit:");
@@ -147,52 +166,39 @@ namespace Search_Engine_Assignment {
 			ShowDetailsDialog();
 			OrderSearchedListChooser();
 		}
-
-		private static List<MyBaseItemClass> DisplaySearchedContent_Linq() {
+#endregion
+		
+		#region Assignment 1 Methods
+		private static void DisplaySearchedContent_MyAlgorithm() {
 			var userInput = Console.ReadLine();
-			var newList = new List<MyBaseItemClass>();
-			var results = new Service().GetAllTitlesList().Where(x => x.Name.ToLower().Contains(userInput.ToLower()));
+			var service = new Service();
+			var searchedList = new List<MyBaseItemClass>();
+			var list = service.GetAllTitlesList();
 
-			foreach (var item in results) {
-				Console.WriteLine(item);
-				newList.Add(item);
+			foreach (var item in list) {
+				if (DoesStringContainsSubstring(item.Name, userInput)) {
+					searchedList.Add(item);
+				}
+
 			}
-			Console.WriteLine("\nSorted list contains {0} items.", results.Count());
+			foreach (var item in searchedList) {
+				Console.WriteLine(item);
+			}
 
-			return newList;
+			Console.WriteLine("\nSorted list contains {0} items.", searchedList.Count);
 		}
 
-		//Methods used for assignment 1
-		//private static void DisplaySearchedContent_MyAlgorithm() {
-		//	var userInput = Console.ReadLine();
-		//	var service = new Service();
-		//	var searchedList = new List<MyBaseItemClass>();
-		//	var list = service.GetAllTitlesList();
+		public static bool DoesStringContainsSubstring(string name, string input) {
+			bool result = true;
 
-		//	foreach (var item in list) {
-		//		if (DoesStringContainsSubstring(item.Name, userInput)) {
-		//			searchedList.Add(item);
-		//		}
-
-		//	}
-		//	foreach (var item in searchedList) {
-		//		Console.WriteLine(item);
-		//	}
-
-		//	Console.WriteLine("\nSorted list contains {0} items.", searchedList.Count);
-		//}
-
-		//public static bool DoesStringContainsSubstring(string name, string input) {
-		//	bool result = true;
-
-		//	if (input == null || name.ToLower().Contains(input.ToLower())) {
-		//		result = true;      // returns all items if input is empty
-		//	} else {
-		//		result = false;
-		//	}
-		//	return result;
-		//}
-
+			if (input == null || name.ToLower().Contains(input.ToLower())) {
+				result = true;      // returns all items if input is empty
+			} else {
+				result = false;
+			}
+			return result;
+		}
+#endregion
 
 	}
 }

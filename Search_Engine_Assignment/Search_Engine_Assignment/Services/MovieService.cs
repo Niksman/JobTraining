@@ -10,11 +10,8 @@ namespace Search_Engine_Assignment.Services {
 			return movieList;
 		}
 
-		public static string Movies_Path = @"C:\Users\nikolas\Documents\learning.nikolas\Search_Engine_Assignment\movies_csv.txt";
+		private static string Movies_Path = @"C:\Users\nikolas\Documents\learning.nikolas\Search_Engine_Assignment\movies_csv.txt";
 
-		public static string[] MoviesFileToStringArray { get => File.ReadAllLines(Movies_Path); }
-
-		//public List<Movie> movieList = new MovieMapperService().ConvertToList(MoviesFileToStringArray);
-
+		string[] MoviesFileToStringArray { get => File.ReadAllLines(Movies_Path); }
 	}
 }

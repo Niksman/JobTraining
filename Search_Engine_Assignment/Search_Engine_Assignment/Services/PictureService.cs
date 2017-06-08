@@ -10,11 +10,8 @@ namespace Search_Engine_Assignment.Services {
 			return pictureList;
 		}
 
-		public static string Pictures_Path = @"C:\Users\nikolas\Documents\learning.nikolas\Search_Engine_Assignment\pictures_csv.txt";
+		static string Pictures_Path = @"C:\Users\nikolas\Documents\learning.nikolas\Search_Engine_Assignment\pictures_csv.txt";
 
-		public static string[] PicturesFileToStringArray { get => File.ReadAllLines(Pictures_Path); }
-
-		//public List<Picture> pictureList = new PictureMapperService().ConvertToList(PicturesFileToStringArray);
-
+		string[] PicturesFileToStringArray { get => File.ReadAllLines(Pictures_Path); }
 	}
 }

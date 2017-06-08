@@ -10,10 +10,8 @@ namespace Search_Engine_Assignment.Services {
 			return songList;
 		}
 
-		public static string Songs_Path = @"C:\Users\nikolas\Documents\learning.nikolas\Search_Engine_Assignment\songs_csv.txt";
+		static string Songs_Path = @"C:\Users\nikolas\Documents\learning.nikolas\Search_Engine_Assignment\songs_csv.txt";
 
-		public static string[] SongsFileToStringArray { get => File.ReadAllLines(Songs_Path); }
-
-		//public List<Song> songList = new SongMapperService().ConvertToList(SongsFileToStringArray);
+		string[] SongsFileToStringArray { get => File.ReadAllLines(Songs_Path); }
 	}
 }
