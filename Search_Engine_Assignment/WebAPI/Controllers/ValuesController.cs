@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Search_Engine_Assignment;
+using Search_Engine_Assignment.Services;
 
 namespace WebAPI.Controllers {
 	[Route("api/[controller]")]
 	public class ValuesController : Controller {
 		// GET api/values
 		[HttpGet]
-		public IEnumerable<Employee> Get() {
+		public List<MyBaseItemClass> Get() {
 
-			List<Employee> employee = new List<Employee> {
-				new Employee("Crni", "Djordje"),
-				new Employee("Djordje", "Crni")
-			};
-			return employee.ToList();
+			List<MyBaseItemClass> items = new Service().GetAllTitlesList();
+
+			return items;
 		}
 
 		// GET api/values/5
