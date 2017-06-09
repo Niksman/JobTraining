@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Search_Engine_Assignment;
-using Search_Engine_Assignment.Services;
+using ServicesClassLibrary.Base;
+using ServicesClassLibrary.Service;
 
 namespace WebAPI.Controllers {
 	[Route("api/[controller]")]

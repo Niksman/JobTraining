@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Search_Engine_Assignment.Base;
-using Search_Engine_Assignment.Services;
+using Search_Engine_Assignment;
 
 namespace Search_Engine_Assignment.Services {
 	public class BookMapperService : IMapper<string[], Book> {

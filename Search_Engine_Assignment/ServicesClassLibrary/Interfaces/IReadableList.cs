@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Search_Engine_Assignment {
+namespace ServicesClassLibrary.Base {
 	public interface IReadableList<T> {
 		List<T> GetList();
 	}

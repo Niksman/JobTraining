@@ -17,7 +17,7 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Search_Engine_Assignment\Search_Engine_Assignment.csproj" />
+    <ProjectReference Include="..\ServicesClassLibrary\ServicesClassLibrary.csproj" />
   </ItemGroup>
 
 </Project>
