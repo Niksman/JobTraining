@@ -9,14 +9,14 @@ using ServicesClassLibrary.Service;
 
 namespace WebAPI.Controllers {
 	[Produces("application/json")]
-	[Route("api/Movies")]
+	[Route("api/[controller]")]
 	public class MoviesController : Controller {
 
 		// GET api/movies
 		[HttpGet]
 		public List<Movie> Get() {
 
-			List<Movie> items = new MovieService().GetList();
+			var items = new MovieService().GetList();
 
 			return items;
 		}

@@ -13,7 +13,7 @@ namespace WebAPI.Controllers {
 		[HttpGet]
 		public List<MyBaseItemClass> Get() {
 
-			List<MyBaseItemClass> items = new Service().GetAllTitlesList();
+			var items = new Service().GetAllTitlesList();
 
 			return items;
 		}

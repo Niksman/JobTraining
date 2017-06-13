@@ -9,14 +9,14 @@ using ServicesClassLibrary.Service;
 
 namespace WebAPI.Controllers {
 	[Produces("application/json")]
-	[Route("api/Pictures")]
+	[Route("api/[controller]")]
 	public class PicturesController : Controller {
 
 		// GET api/pictures
 		[HttpGet]
 		public List<Picture> Get() {
 
-			List<Picture> items = new PictureService().GetList();
+			var items = new PictureService().GetList();
 
 			return items;
 		}
