@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Search_Engine_Assignment.Services;
+using ServicesClassLibrary.Service;
+using ServicesClassLibrary.Base;
 
 namespace Search_Engine_Assignment {
 	class Program {
@@ -13,7 +14,6 @@ namespace Search_Engine_Assignment {
 
 			// Assignment_2();
 
-			// ASSIGNMENT 3
 			 Assignment_3();
 			
 			// ASSIGNMENT 1

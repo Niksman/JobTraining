@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Search_Engine_Assignment {
+namespace ServicesClassLibrary.Base {
 	public abstract class MyBaseItemClass {
 		public string Name { get; set; }
 		public string Description { get; set; }

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Search_Engine_Assignment.Base {
+namespace ServicesClassLibrary.Base {
 	public class Song : MyBaseItemClass {
 
 		public string Language { get; set; }
