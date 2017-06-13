@@ -8,8 +8,8 @@ using ServicesClassLibrary.Service;
 
 namespace WebAPI.Controllers {
 	[Route("api/[controller]")]
-	public class ValuesController : Controller {
-		// GET api/values
+	public class BaseItemsController : Controller {
+		// GET api/baseitems
 		[HttpGet]
 		public List<MyBaseItemClass> Get() {
 
