@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using DataAccess;
 using ServicesClassLibrary.Base;
+using Shared.Base;
 
 namespace ServicesClassLibrary.Service {
 	public class Service {

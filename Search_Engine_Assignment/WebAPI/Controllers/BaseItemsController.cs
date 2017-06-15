@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ServicesClassLibrary.Base;
 using ServicesClassLibrary.Service;
+using Shared.Base;
 
 namespace WebAPI.Controllers {
 	[Route("api/[controller]")]

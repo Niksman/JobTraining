@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using ServicesClassLibrary.Service;
 using ServicesClassLibrary.Base;
+using Shared.Base;
 
 namespace Search_Engine_Assignment {
 	class Program {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ServicesClassLibrary.Base {
+namespace Shared.Base {
 	public abstract class MyBaseItemClass {
 		public string Name { get; set; }
 		public string Description { get; set; }

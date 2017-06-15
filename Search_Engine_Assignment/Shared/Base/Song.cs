@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ServicesClassLibrary.Base {
+namespace Shared.Base {
 	public class Song : MyBaseItemClass {
 
 		public string Language { get; set; }

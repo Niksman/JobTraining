@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ServicesClassLibrary.Base {
+namespace Shared.Base {
 	public class Movie : MyBaseItemClass {
 
 		public string MyReview { get; set; }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using ServicesClassLibrary.Base;
+using Shared.Base;
 
 namespace ServicesClassLibrary.Service {
 	public class MovieMapperService : IMapper<string[], Movie> {

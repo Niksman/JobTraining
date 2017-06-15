@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ServicesClassLibrary.Base;
 using ServicesClassLibrary.Service;
+using Shared.Base;
 
 namespace WebAPI.Controllers {
 	[Produces("application/json")]

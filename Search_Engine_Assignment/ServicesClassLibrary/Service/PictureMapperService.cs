@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using ServicesClassLibrary.Base;
+using Shared.Base;
 
 namespace ServicesClassLibrary.Service {
 	public class PictureMapperService : IMapper<string[], Picture> {

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using ServicesClassLibrary.Base;
+using Shared.Base;
 
 namespace ServicesClassLibrary.Service {
 	public class BookService : IReadableList<Book> {
