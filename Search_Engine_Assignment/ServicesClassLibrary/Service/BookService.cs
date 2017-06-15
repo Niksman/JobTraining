@@ -8,13 +8,12 @@ namespace ServicesClassLibrary.Service {
 	public class BookService : IReadableList<Book> {
 
 		public List<Book> GetList() {
-			//List<Book> bookList = new BookMapperService().ConvertToList(BooksFileToStringArray);
-			List<Book> bookList = new BooksSqlRepository().GetList();
+			var bookList = new BooksSqlRepository().GetList();
 			return bookList;
 		}
 
-		private static string Books_Path = @"C:\Users\nikolas\Documents\learning.nikolas\Search_Engine_Assignment\books_csv.txt";
-
-		string[] BooksFileToStringArray { get => File.ReadAllLines(Books_Path); }
+		//for mapper
+		//private static string Books_Path = @"C:\Users\nikolas\Documents\learning.nikolas\Search_Engine_Assignment\books_csv.txt";
+		//string[] BooksFileToStringArray { get => File.ReadAllLines(Books_Path); }
 	}
 }

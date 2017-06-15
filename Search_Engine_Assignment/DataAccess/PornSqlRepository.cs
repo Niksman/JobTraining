@@ -6,10 +6,11 @@ using Shared.Base;
 
 namespace DataAccess {
 	public class PornSqlRepository : BaseSqlRepository<Porn> {
-		public override List<Porn> GetData() {
-			using(var connection = new SqlConnection(_connectionString)) {
+		
+		public override List<Porn> GetList() {
+			using (var connection = new SqlConnection(_connectionString)) {
 				var command = new SqlCommand("Select * From Porn;", connection);
-				List<Porn> pornDataAccess = new List<Porn>();
+				var pornDataAccess = new List<Porn>();
 				try {
 					connection.Open();
 					var reader = command.ExecuteReader();
@@ -22,13 +23,6 @@ namespace DataAccess {
 				}
 				return pornDataAccess;
 			}
-		}
-
-		private const string _connectionString = @"Data Source=SUPPER-MARIO\SQLEXPRESS;Initial Catalog=SEA_DB;Integrated Security=true";
-
-		public override List<Porn> GetList() {
-			List<Porn> pornList = GetData();
-			return pornList;
 		}
 	}
 }

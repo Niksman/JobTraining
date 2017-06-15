@@ -8,12 +8,12 @@ namespace ServicesClassLibrary.Service {
 
 		public List<Picture> GetList() {
 			//List<Picture> pictureList = new PictureMapperService().ConvertToList(PicturesFileToStringArray);
-			List<Picture> pictureList = new List<Picture>();
+			var pictureList = new List<Picture>();
 			return pictureList;
 		}
 
-		static string Pictures_Path = @"C:\Users\nikolas\Documents\learning.nikolas\Search_Engine_Assignment\pictures_csv.txt";
-
-		string[] PicturesFileToStringArray { get => File.ReadAllLines(Pictures_Path); }
+		//for mapper
+		//static string Pictures_Path = @"C:\Users\nikolas\Documents\learning.nikolas\Search_Engine_Assignment\pictures_csv.txt";
+		//string[] PicturesFileToStringArray { get => File.ReadAllLines(Pictures_Path); }
 	}
 }

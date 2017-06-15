@@ -14,10 +14,7 @@ namespace Shared.Base {
 		}
 
 		public override string ToString() {
-			//return string.Format("Name of the book is \"{0}\", description is \"{1}\", production date: \"{2}\". Buy it on Amazon for price \"${3}\". " +
-			//	"Genre is: \"{4}\"", Name, Description, TimeAndDate, Price, Genre);
-
-			return string.Format($"Name of the book is \"{Name}\", description is \"{Description}\", page count is \"{PageCount}\" pages, genre is \"{Genre}\".");
+			return string.Format($"Book name is \"{Name}\", description is \"{Description}\", page count is \"{PageCount}\" pages, genre is \"{Genre}\".");
 		}
 	}
 }

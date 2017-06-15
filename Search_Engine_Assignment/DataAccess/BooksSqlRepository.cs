@@ -8,16 +8,9 @@ namespace DataAccess {
 	public class BooksSqlRepository : BaseSqlRepository<Book> {
 
 		public override List<Book> GetList() {
-			List<Book> bookList = GetData();
-			return bookList;
-		}
-
-		private const string _connectionString = @"Data Source=SUPPER-MARIO\SQLEXPRESS;Initial Catalog=SEA_DB;Integrated Security=true";
-
-		public override List<Book> GetData() {
 			using (var connection = new SqlConnection(_connectionString)) {
 				var command = new SqlCommand("Select * From Books;", connection);
-				List<Book> bookDataAccess = new List<Book>();
+				var bookDataAccess = new List<Book>();
 				try {
 					connection.Open();
 					var reader = command.ExecuteReader();

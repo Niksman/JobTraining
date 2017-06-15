@@ -28,6 +28,10 @@ namespace Search_Engine_Assignment {
 			foreach (var item in pl) {
 				Console.WriteLine(item);
 			}
+			List<Song> sl = new SongService().GetList();
+			foreach (var item in sl) {
+				Console.WriteLine(item);
+			}
 			//Assignment_3();
 
 			// ASSIGNMENT 1

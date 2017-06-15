@@ -5,23 +5,23 @@ using System.Text;
 using Shared.Base;
 
 namespace DataAccess {
-	public class MoviesSqlRepository : BaseSqlRepository<Movie> {
+	public class SongSqlRepository : BaseSqlRepository<Song> {
 
-		public override List<Movie> GetList() {
+		public override List<Song> GetList() {
 			using (var connection = new SqlConnection(_connectionString)) {
-				var command = new SqlCommand("Select * From Movies;", connection);
-				var movieDataAccess = new List<Movie>();
+				var command = new SqlCommand("Select * From Songs;", connection);
+				var songDataAccess = new List<Song>();
 				try {
 					connection.Open();
 					var reader = command.ExecuteReader();
 					while (reader.Read()) {
-						movieDataAccess.Add(new Movie(reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4]), reader[5].ToString()));
+						songDataAccess.Add(new Song(reader[2].ToString(), Convert.ToInt32(reader[3]), reader[4].ToString()));
 					}
 				} catch (Exception e) {
 
 					Console.WriteLine(e.ToString());
 				}
-				return movieDataAccess;
+				return songDataAccess;
 			}
 		}
 	}

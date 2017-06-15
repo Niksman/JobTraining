@@ -9,7 +9,7 @@ namespace ServicesClassLibrary.Service {
 	public class PornService : IReadableList<Porn> {
 
 		public List<Porn> GetList() {
-			List<Porn> pornList = new PornSqlRepository().GetList();
+			var pornList = new PornSqlRepository().GetList();
 			return pornList;
 		}
 	}
