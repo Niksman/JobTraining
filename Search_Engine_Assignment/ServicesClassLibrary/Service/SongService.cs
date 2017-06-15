@@ -7,7 +7,8 @@ namespace ServicesClassLibrary.Service {
 	public class SongService : IReadableList<Song> {
 
 		public List<Song> GetList() {
-			List<Song> songList = new SongMapperService().ConvertToList(SongsFileToStringArray);
+			//List<Song> songList = new SongMapperService().ConvertToList(SongsFileToStringArray);
+			List<Song> songList = new List<Song>();
 			return songList;
 		}
 

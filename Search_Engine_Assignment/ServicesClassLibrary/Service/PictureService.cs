@@ -7,7 +7,8 @@ namespace ServicesClassLibrary.Service {
 	public class PictureService : IReadableList<Picture> {
 
 		public List<Picture> GetList() {
-			List<Picture> pictureList = new PictureMapperService().ConvertToList(PicturesFileToStringArray);
+			//List<Picture> pictureList = new PictureMapperService().ConvertToList(PicturesFileToStringArray);
+			List<Picture> pictureList = new List<Picture>();
 			return pictureList;
 		}
 

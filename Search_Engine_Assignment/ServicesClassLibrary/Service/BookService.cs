@@ -2,12 +2,14 @@
 using System.IO;
 using ServicesClassLibrary.Base;
 using Shared.Base;
+using DataAccess;
 
 namespace ServicesClassLibrary.Service {
 	public class BookService : IReadableList<Book> {
 
 		public List<Book> GetList() {
-			List<Book> bookList = new BookMapperService().ConvertToList(BooksFileToStringArray);
+			//List<Book> bookList = new BookMapperService().ConvertToList(BooksFileToStringArray);
+			List<Book> bookList = new BooksSqlRepository().GetList();
 			return bookList;
 		}
 

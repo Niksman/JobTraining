@@ -2,12 +2,13 @@
 using System.IO;
 using ServicesClassLibrary.Base;
 using Shared.Base;
+using DataAccess;
 
 namespace ServicesClassLibrary.Service {
 	public class MovieService : IReadableList<Movie> {
 
 		public List<Movie> GetList() {
-			List<Movie> movieList = new MovieMapperService().ConvertToList(MoviesFileToStringArray);
+			List<Movie> movieList = new MoviesSqlRepository().GetList();
 			return movieList;
 		}
 

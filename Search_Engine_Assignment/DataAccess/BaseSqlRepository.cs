@@ -9,21 +9,23 @@ namespace DataAccess {
 
 		public abstract List<T> GetList();
 
-		public void Test() {
-			using (var connection = new SqlConnection(_connectionString)) {
-				var command = new SqlCommand("SELECT * FROM Authors;", connection);
+		public abstract List<T> GetData();
 
-				try {
-					connection.Open();
-					var reader = command.ExecuteReader();
-					while (reader.Read()) {
-						Console.WriteLine($"ID: {reader[0]}, Full Name: {reader[1]} {reader[2]}");
-					}
-				} catch (Exception e) {
-					Console.WriteLine(e.ToString());
-				}
+		//public void Test() {
+		//	using (var connection = new SqlConnection(_connectionString)) {
+		//		var command = new SqlCommand("SELECT * FROM Authors;", connection);
 
-			}
-		}
+		//		try {
+		//			connection.Open();
+		//			var reader = command.ExecuteReader();
+		//			while (reader.Read()) {
+		//				Console.WriteLine($"ID: {reader[0]}, Full Name: {reader[1]} {reader[2]}");
+		//			}
+		//		} catch (Exception e) {
+		//			Console.WriteLine(e.ToString());
+		//		}
+
+		//	}
+		//}
 	}
 }
