@@ -12,9 +12,15 @@ namespace Shared.Base {
 			Length = length;
 			Review = review;
 		}
-		
+
+		public Movie(string authorName, string authorSurname, string name, string description, int length, string review) : base(authorName, authorSurname, name) {
+			Description = description;
+			Length = length;
+			Review = review;
+		}
+
 		public override string ToString() {
-			return string.Format($"Movie name is \"{Name}\", description is \"{Description}\", length \"{Length}\" minutes, review \"{Review}\".");
+			return string.Format($"Author  \"{AuthorName} {AuthorSurname}\". Movie \"{Name}\", description is \"{Description}\", length \"{Length}\" minutes, review \"{Review}\".");
 		}
 	}
 }

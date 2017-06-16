@@ -11,8 +11,13 @@ namespace Shared.Base {
 			Genre = genre;
 		}
 
+		public Song(string authorName, string authorSurname, string name, int duration, string genre) : base(authorName, authorSurname, name) {
+			Duration = duration;
+			Genre = genre;
+		}
+
 		public override string ToString() {
-			return string.Format($"Name of the song is \"{Name}\", duration is \"{Duration}\" seconds, genre is \"{Genre}\".");
+			return string.Format($"Author  \"{AuthorName} {AuthorSurname}\". Song \"{Name}\", duration is \"{Duration}\" seconds, genre is \"{Genre}\".");
 		}
 	}
 }

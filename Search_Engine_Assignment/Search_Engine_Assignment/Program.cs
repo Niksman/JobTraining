@@ -15,23 +15,11 @@ namespace Search_Engine_Assignment {
 
 			// Assignment_2();
 
-			List<Movie> ml = new MovieService().GetList();
-			foreach (var item in ml) {
+			var allTitlesList = new Service().GetAllTitlesList();
+			foreach (var item in allTitlesList) {
 				Console.WriteLine(item);
 			}
 
-			List<Book> bl = new BookService().GetList();
-			foreach (var item in bl) {
-				Console.WriteLine(item);
-			}
-			List<Porn> pl = new PornService().GetList();
-			foreach (var item in pl) {
-				Console.WriteLine(item);
-			}
-			List<Song> sl = new SongService().GetList();
-			foreach (var item in sl) {
-				Console.WriteLine(item);
-			}
 			//Assignment_3();
 
 			// ASSIGNMENT 1

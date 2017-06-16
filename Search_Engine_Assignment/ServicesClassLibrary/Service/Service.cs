@@ -13,7 +13,7 @@ namespace ServicesClassLibrary.Service {
 			AllTitlesList.AddRange(new MovieService().GetList());
 			AllTitlesList.AddRange(new SongService().GetList());
 			AllTitlesList.AddRange(new BookService().GetList());
-			AllTitlesList.AddRange(new PictureService().GetList());
+			AllTitlesList.AddRange(new PornService().GetList());
 
 			return AllTitlesList;
 		}

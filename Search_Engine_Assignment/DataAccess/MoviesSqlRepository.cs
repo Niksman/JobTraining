@@ -9,13 +9,13 @@ namespace DataAccess {
 
 		public override List<Movie> GetList() {
 			using (var connection = new SqlConnection(_connectionString)) {
-				var command = new SqlCommand("Select * From Movies;", connection);
+				var command = new SqlCommand("SELECT a.firstname, a.lastname, m.name, m.description, m.length, m.review FROM Movies AS m INNER JOIN Authors AS a ON m.authorId = a.authorId", connection);
 				var movieDataAccess = new List<Movie>();
 				try {
 					connection.Open();
 					var reader = command.ExecuteReader();
 					while (reader.Read()) {
-						movieDataAccess.Add(new Movie(reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4]), reader[5].ToString()));
+						movieDataAccess.Add(new Movie(reader[0].ToString(), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), Convert.ToInt32(reader[4]), reader[5].ToString()));
 					}
 				} catch (Exception e) {
 

@@ -14,8 +14,14 @@ namespace Shared.Base {
 			Rating = rating;
 		}
 
+		public Porn(string authorName, string authorSurname, string name, string pornStar, int duration, int rating) : base(authorName, authorSurname, name) {
+			PornStar = pornStar;
+			Duration = duration;
+			Rating = rating;
+		}
+
 		public override string ToString() {
-			return string.Format($"Name of the porn is \"{Name}\", starring \"{PornStar}\", duration \"{Duration}\" minutes, and rating is \"{Rating}\".");
+			return string.Format($"Author  \"{AuthorName} {AuthorSurname}\". Porn \"{Name}\", starring \"{PornStar}\", duration \"{Duration}\" minutes, and rating is \"{Rating}\".");
 		}
 	}
 }
