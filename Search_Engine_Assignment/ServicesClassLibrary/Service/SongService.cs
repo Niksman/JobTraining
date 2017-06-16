@@ -8,7 +8,7 @@ namespace ServicesClassLibrary.Service {
 	public class SongService : IReadableList<Song> {
 
 		public List<Song> GetList() {
-			var songList = new SongSqlRepository().GetList();
+			var songList = new SongsSqlRepository().GetList();
 			return songList;
 		}
 
